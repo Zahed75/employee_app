@@ -8,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
+  sideMenuOpen: boolean = false; // Sidebar state
+
+  
+
+
+
+  // sideBar Menu
+  toggleSelectAll(event: any): void {
+   
+  }
+
+  toggleUserSelection(user: any, event: any): void {
+    user.isSelected = event.target.checked;
+  }
+
+
 }
