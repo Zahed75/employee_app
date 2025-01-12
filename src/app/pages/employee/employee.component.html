@@ -46,9 +46,10 @@
           <label for="parent-department" class="block text-gray-700">Parent Department</label>
           <select id="parent-department" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
             <option value="" disabled selected>Select Parent Department</option>
-            <option value="it">IT</option>
-            <option value="hr">HR</option>
-            <option value="finance">Finance</option>
+
+            @for (item of parentDeptList; track $index) {
+              <option [value]="item.departmentId">{{item.departmentName}}</option>
+            }
             <!-- Add more parent departments as needed -->
           </select>
         </div>
