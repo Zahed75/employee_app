@@ -7,7 +7,8 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-employee',
   imports: [
-    RouterOutlet
+
+
   ],
   templateUrl: './employee.component.html',
   styleUrl: './employee.component.css'
@@ -15,7 +16,7 @@ import { RouterOutlet } from '@angular/router';
 export class EmployeeComponent implements OnInit  {
 
   ngOnInit(): void {
-      
+
   }
 
 

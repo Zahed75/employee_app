@@ -1,21 +1,99 @@
-<section class="w-full h-[100vh]">
-  <div class="max-w-[1170px] mx-auto flex flex-wrap items-center gap-6 px-4">
+<div class="flex flex-row">
+  <!-- Main Content -->
+  <div class="p-4 sm:ml-64 w-full">
+    <div>
+      <h1 class="text-3xl font-bold text-[black] mb-6">Dashboard</h1>
+      <h3 class="text-xl font-semibold text-[black] mb-4">Overview</h3>
 
+      <!-- Responsive Boxes -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        <div
+          class="flex flex-col items-start justify-center h-24 rounded-lg bg-gray-50 shadow-md dark:bg-gray-800 p-4">
+          <p class="text-sm text-gray-500 dark:text-gray-400">Total Sales</p>
+          <h2 class="text-2xl font-bold text-black dark:text-white">43,243</h2>
+        </div>
+        <div
+          class="flex flex-col items-start justify-center h-24 rounded-lg bg-gray-50 shadow-md dark:bg-gray-800 p-4">
+          <p class="text-sm text-gray-500 dark:text-gray-400">New Orders</p>
+          <h2 class="text-2xl font-bold text-black dark:text-white">43,243</h2>
+        </div>
+        <div
+          class="flex flex-col items-start justify-center h-24 rounded-lg bg-gray-50 shadow-md dark:bg-gray-800 p-4">
+          <p class="text-sm text-gray-500 dark:text-gray-400">Pending Issues</p>
+          <h2 class="text-2xl font-bold text-black dark:text-white">43,243</h2>
+        </div>
+        <div
+          class="flex flex-col items-start justify-center h-24 rounded-lg bg-gray-50 shadow-md dark:bg-gray-800 p-4">
+          <p class="text-sm text-gray-500 dark:text-gray-400">Total Revenue</p>
+          <h2 class="text-2xl font-bold text-black dark:text-white">43,243</h2>
+        </div>
+      </div>
+
+
+      <!-- User Table -->
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+            <th class="p-4">
+              <input
+                id="checkbox-all-search"
+                type="checkbox"
+
+              />
+            </th>
+            <th class="px-6 py-3">User</th>
+            <th class="px-6 py-3">Email</th>
+            <th class="px-6 py-3">Phone</th>
+            <th class="px-6 py-3">Role</th>
+            <th class="px-6 py-3">Active Status</th>
+            <th class="px-6 py-3">Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr
+
+            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+          >
+            <td class="p-4">
+              <input
+                type="checkbox"
+
+              />
+            </td>
+            <th class="px-6 py-4 font-medium text-gray-900 dark:text-white">
+
+            </th>
+            <td class="px-6 py-3">Email</td>
+            <td class="px-6 py-3">Phone Number</td>
+            <td class="px-6 py-3">Role</td>
+            <td class="px-6 py-3">
+
+            </td>
+
+            <td class="px-6 py-3 flex space-x-4">
+              <button
+
+                class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600"
+              >
+                Edit
+              </button>
+              <button
+
+                class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
+              >
+                Remove
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-
-    
-    <div class="sm:flex-[1] flex-[100%]">
-      
-    </div>
-
-
-
-</section>
-
-
-
-
+  </div>
+</div>
 
 
 
 <router-outlet></router-outlet>
+

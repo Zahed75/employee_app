@@ -1,50 +1,113 @@
-<section class="w-full h-[100vh]">
-  <div class="max-w-[1170px] mx-auto flex flex-wrap items-center gap-6 px-4">
+<div class="flex">
+  <!-- Sidebar (assuming you have a sidebar component) -->
+  <div class="w-1/6 p-6">
+    <!-- Your sidebar content here -->
+  </div>
 
-    <!--      Table start   -->
+  <!-- Main Content Area -->
+  <div class="flex-1 p-6 ">
+    <!-- Form Section -->
+    <div class="mb-6">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Employee Form</h2>
+      <form class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="mb-4">
+            <label for="employee-id" class="block text-gray-700">Employee ID</label>
+            <input type="text" id="employee-id" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Employee ID">
+          </div>
+          <div class="mb-4">
+            <label for="employee-name" class="block text-gray-700">Employee Name</label>
+            <input type="text" id="employee-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Employee Name">
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="mb-4">
+            <label for="employee-position" class="block text-gray-700">Position</label>
+            <input type="text" id="employee-position" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Position">
+          </div>
+          <div class="mb-4">
+            <label for="employee-department" class="block text-gray-700">Department</label>
+            <input type="text" id="employee-department" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Department">
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="mb-4">
+            <label for="employee-email" class="block text-gray-700">Email</label>
+            <input type="email" id="employee-email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Email">
+          </div>
+          <div class="mb-4">
+            <label for="employee-phone" class="block text-gray-700">Phone</label>
+            <input type="text" id="employee-phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Phone">
+          </div>
+        </div>
+
+        <!-- Parent Department Dropdown -->
+        <div class="mb-4">
+          <label for="parent-department" class="block text-gray-700">Parent Department</label>
+          <select id="parent-department" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="" disabled selected>Select Parent Department</option>
+            <option value="it">IT</option>
+            <option value="hr">HR</option>
+            <option value="finance">Finance</option>
+            <!-- Add more parent departments as needed -->
+          </select>
+        </div>
+
+        <!-- Child Department Dropdown -->
+        <div class="mb-4">
+          <label for="child-department" class="block text-gray-700">Child Department</label>
+          <select id="child-department" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="" disabled selected>Select Child Department</option>
+            <!-- Options will depend on the selected Parent Department -->
+            <option value="dev">Development</option>
+            <option value="design">Design</option>
+            <option value="recruitment">Recruitment</option>
+            <!-- Add more child departments as needed -->
+          </select>
+        </div>
+
+        <!-- Gender Dropdown -->
+        <div class="mb-4">
+          <label for="gender" class="block text-gray-700">Gender</label>
+          <select id="gender" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="" disabled selected>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="mb-4">
+          <button type="submit" class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Table Section -->
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
       <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
           <th scope="col" class="p-4">
             <div class="flex items-center">
-              <input id="checkbox-all-search" type="checkbox"
-                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+              <input id="checkbox-all-search" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
               <label for="checkbox-all-search" class="sr-only">checkbox</label>
             </div>
           </th>
-          <th scope="col" class="px-6 py-3">
-            Product name
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Color
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Category
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Accessories
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Available
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Price
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Weight
-          </th>
-          <th scope="col" class="px-6 py-3">
-            Action
-          </th>
+          <th scope="col" class="px-6 py-3">Employee ID</th>
+          <th scope="col" class="px-6 py-3">Name</th>
+          <th scope="col" class="px-6 py-3">Position</th>
+          <th scope="col" class="px-6 py-3">Department</th>
+          <th scope="col" class="px-6 py-3">Email</th>
+          <th scope="col" class="px-6 py-3">Phone</th>
+          <th scope="col" class="px-6 py-3">Action</th>
         </tr>
         </thead>
         <tbody>
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
           <td class="w-4 p-4">
             <div class="flex items-center">
-              <input id="checkbox-table-search-1" type="checkbox"
-                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+              <input id="checkbox-table-search-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
               <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
             </div>
           </td>
@@ -77,8 +140,7 @@
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
           <td class="w-4 p-4">
             <div class="flex items-center">
-              <input id="checkbox-table-search-2" type="checkbox"
-                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+              <input id="checkbox-table-search-2" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
               <label for="checkbox-table-search-2" class="sr-only">checkbox</label>
             </div>
           </td>
@@ -100,9 +162,7 @@
           <td class="px-6 py-4">
             $1999
           </td>
-          <td class="px-6 py-4">
-            1.0 lb.
-          </td>
+
           <td class="flex items-center px-6 py-4">
             <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
             <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
@@ -111,8 +171,7 @@
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
           <td class="w-4 p-4">
             <div class="flex items-center">
-              <input id="checkbox-table-search-3" type="checkbox"
-                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+              <input id="checkbox-table-search-3" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
               <label for="checkbox-table-search-3" class="sr-only">checkbox</label>
             </div>
           </td>
@@ -134,9 +193,7 @@
           <td class="px-6 py-4">
             $99
           </td>
-          <td class="px-6 py-4">
-            0.2 lb.
-          </td>
+
           <td class="flex items-center px-6 py-4">
             <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
             <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
@@ -145,8 +202,7 @@
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
           <td class="w-4 p-4">
             <div class="flex items-center">
-              <input id="checkbox-table-search-3" type="checkbox"
-                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+              <input id="checkbox-table-search-3" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
               <label for="checkbox-table-search-3" class="sr-only">checkbox</label>
             </div>
           </td>
@@ -179,8 +235,7 @@
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
           <td class="w-4 p-4">
             <div class="flex items-center">
-              <input id="checkbox-table-search-3" type="checkbox"
-                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+              <input id="checkbox-table-search-3" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
               <label for="checkbox-table-search-3" class="sr-only">checkbox</label>
             </div>
           </td>
@@ -213,8 +268,7 @@
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
           <td class="w-4 p-4">
             <div class="flex items-center">
-              <input id="checkbox-table-search-3" type="checkbox"
-                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+              <input id="checkbox-table-search-3" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
               <label for="checkbox-table-search-3" class="sr-only">checkbox</label>
             </div>
           </td>
@@ -247,8 +301,7 @@
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
           <td class="w-4 p-4">
             <div class="flex items-center">
-              <input id="checkbox-table-search-3" type="checkbox"
-                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+              <input id="checkbox-table-search-3" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
               <label for="checkbox-table-search-3" class="sr-only">checkbox</label>
             </div>
           </td>
@@ -281,8 +334,7 @@
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
           <td class="w-4 p-4">
             <div class="flex items-center">
-              <input id="checkbox-table-search-3" type="checkbox"
-                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+              <input id="checkbox-table-search-3" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
               <label for="checkbox-table-search-3" class="sr-only">checkbox</label>
             </div>
           </td>
@@ -315,8 +367,7 @@
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
           <td class="w-4 p-4">
             <div class="flex items-center">
-              <input id="checkbox-table-search-3" type="checkbox"
-                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+              <input id="checkbox-table-search-3" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
               <label for="checkbox-table-search-3" class="sr-only">checkbox</label>
             </div>
           </td>
@@ -349,8 +400,7 @@
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
           <td class="w-4 p-4">
             <div class="flex items-center">
-              <input id="checkbox-table-search-3" type="checkbox"
-                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+              <input id="checkbox-table-search-3" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
               <label for="checkbox-table-search-3" class="sr-only">checkbox</label>
             </div>
           </td>
@@ -383,55 +433,5 @@
         </tbody>
       </table>
     </div>
-
-    <!--      Table End   -->
-
   </div>
-
-
-  <div class="sm:flex-[1] flex-[100%]">
-
-
-    <form class="max-w-md mx-auto">
-      <div class="relative z-0 w-full mb-5 group">
-        <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-        <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
-      </div>
-      <div class="relative z-0 w-full mb-5 group">
-        <input type="password" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-        <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-      </div>
-      <div class="relative z-0 w-full mb-5 group">
-        <input type="password" name="repeat_password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-        <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
-      </div>
-      <div class="grid md:grid-cols-2 md:gap-6">
-        <div class="relative z-0 w-full mb-5 group">
-          <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-          <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
-        </div>
-        <div class="relative z-0 w-full mb-5 group">
-          <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-          <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
-        </div>
-      </div>
-      <div class="grid md:grid-cols-2 md:gap-6">
-        <div class="relative z-0 w-full mb-5 group">
-          <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-          <label for="floating_phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number (123-456-7890)</label>
-        </div>
-        <div class="relative z-0 w-full mb-5 group">
-          <input type="text" name="floating_company" id="floating_company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-          <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Company (Ex. Google)</label>
-        </div>
-      </div>
-      <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-    </form>
-
-  </div>
-
-
-</section>
-
-
-<router-outlet></router-outlet>
+</div>
