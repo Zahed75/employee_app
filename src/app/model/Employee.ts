@@ -1,7 +1,7 @@
 export class Employee {
   employeeId: number;
   employeeName: string;
-  contatctNo: number;
+  contactNo: number;
   emailId: string;
   deptId: number;
   password: string;
@@ -12,11 +12,11 @@ export class Employee {
   constructor() {
     this.employeeId = 0;
     this.employeeName = '';
-    this.contatctNo = 0;
+    this.contactNo = 0;
     this.emailId = '';
     this.deptId = 0;
     this.password = '';
-    this.role = '';
+    this.role = 'Employee';
     this.createdDate = new Date();
   }
 }
