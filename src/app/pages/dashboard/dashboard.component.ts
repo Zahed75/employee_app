@@ -1,27 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, inject, NgModule } from '@angular/core';
+import { IApiResponse, IParentDept } from '../../model/Employee';
+import { MasterService } from '../../services/master.service';
+import { FormsModule, NgModel } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  standalone: true,
+  imports: [RouterOutlet],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {
-
   sideMenuOpen: boolean = false; // Sidebar state
-
-  
-
-
-
-  // sideBar Menu
-  toggleSelectAll(event: any): void {
-   
-  }
-
-  toggleUserSelection(user: any, event: any): void {
-    user.isSelected = event.target.checked;
-  }
+  ParentDeptList: any;
+  selectedChildDept: any;
 
 
 }

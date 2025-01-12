@@ -34,7 +34,7 @@ export interface IChildDept {
 }
 
 export interface IApiResponse {
-    message: string;
-    result:boolean;
-    data:any
+  message: string;
+  result: boolean;
+  data: any;
 }
