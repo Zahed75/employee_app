@@ -5,7 +5,7 @@ export class Employee {
   emailId: string;
   deptId: number;
   password: string;
-  gender: string | undefined;
+  gender: string;
   role: string;
   createdDate: Date;
 
@@ -16,10 +16,12 @@ export class Employee {
     this.emailId = '';
     this.deptId = 0;
     this.password = '';
+    this.gender = ''; // Initialize gender
     this.role = 'Employee';
     this.createdDate = new Date();
   }
 }
+
 
 export interface IParentDept {
   departmentId: number;

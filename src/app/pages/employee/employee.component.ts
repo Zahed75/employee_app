@@ -3,6 +3,7 @@ import {MasterService} from '../../services/master.service';
 import {Employee, IApiResponse, IChildDept, IParentDept} from '../../model/Employee';
 import {RouterOutlet} from '@angular/router';
 import {FormsModule} from '@angular/forms';
+import {EmployeeService} from '../../services/employee.service';
 
 
 @Component({
@@ -23,6 +24,7 @@ export class EmployeeComponent implements OnInit {
 
 
   masterService = inject(MasterService);
+  empService = inject(EmployeeService);
 
   ngOnInit(): void {
     this.getParentDeptList()
@@ -40,5 +42,15 @@ export class EmployeeComponent implements OnInit {
     });
   }
 
+  onSaveEmp(){
+    this.empService.createNewEmployee(this.employeeObj).subscribe((res:IApiResponse)=>{
+      if(res.result){
+        alert("Employee created successfully")
+      }
+      else{
+        alert(res.message)
+      }
+    })
+  }
 
 }
