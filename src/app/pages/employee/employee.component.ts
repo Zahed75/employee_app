@@ -1,7 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {MasterService} from '../../services/master.service';
 import {Employee, IApiResponse, IChildDept, IParentDept} from '../../model/Employee';
-import {RouterOutlet} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {EmployeeService} from '../../services/employee.service';
 
